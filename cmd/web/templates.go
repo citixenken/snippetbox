@@ -9,4 +9,5 @@ import "github.com/citixenken/snippetbox/internal/models"
 
 type templateData struct {
 	Snippet models.Snippet
+	Snippets []models.Snippet
 }
