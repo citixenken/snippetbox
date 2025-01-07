@@ -12,6 +12,7 @@ import (
 // to it as the build progresses.
 
 type templateData struct {
+	CurrentYear int
 	Snippet  models.Snippet
 	Snippets []models.Snippet
 }
