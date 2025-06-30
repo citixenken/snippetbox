@@ -9,6 +9,10 @@ import (
 	"strconv"
 )
 
+func ping(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("OK"))
+}
+
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	snippets, err := app.snippets.Latest()
 
@@ -17,13 +21,9 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Call the newTemplateData() helper to get a templateData struct containing
-	// the 'default' data (which for now is just the current year), and add the
-	// snippets slice to it.
 	data := app.newTemplateData(r)
 	data.Snippets = snippets
 
-	// Pass the data to the render() helper as normal.
 	app.render(w, r, http.StatusOK, "home.tmpl", data)
 }
 
@@ -59,12 +59,6 @@ func (app *application) snippetCreate(w http.ResponseWriter, r *http.Request) {
 
 	app.render(w, r, http.StatusOK, "create.tmpl", data)
 }
-
-// Define a snippetCreateForm struct to represent the form data and validation
-// errors for the form fields. Note that all the struct fields are deliberately
-// exported (i.e. start with a capital letter). This is because struct fields
-// must be exported in order to be read by the html/template package when
-// rendering the template.
 
 type snippetCreateForm struct {
 	Title               string `form:"title"`
