@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/justinas/alice"
 	"github.com/citixenken/snippetbox/ui"
+	"github.com/justinas/alice"
 	"net/http"
 )
 

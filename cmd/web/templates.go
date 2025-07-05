@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/citixenken/snippetbox/internal/models"
 	"github.com/citixenken/snippetbox/ui"
-	"io/fs"
 	"html/template"
+	"io/fs"
 	"path/filepath"
 	"time"
 )
@@ -15,13 +15,13 @@ import (
 // to it as the build progresses.
 
 type templateData struct {
-	CurrentYear int
-	Snippet     models.Snippet
-	Snippets    []models.Snippet
-	Form        any
-	Flash       string
+	CurrentYear     int
+	Snippet         models.Snippet
+	Snippets        []models.Snippet
+	Form            any
+	Flash           string
 	IsAuthenticated bool
-	CSRFToken string
+	CSRFToken       string
 }
 
 // Create a humanDate function which returns a nicely formatted string

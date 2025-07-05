@@ -12,24 +12,24 @@ func TestUserModelExists(t *testing.T) {
 	}
 
 	tests := []struct {
-		name string
+		name   string
 		userID int
-		want  bool
+		want   bool
 	}{
 		{
-			name: "Valid ID",
+			name:   "Valid ID",
 			userID: 1,
-			want:  true,
+			want:   true,
 		},
 		{
-			name: "Zero ID",
+			name:   "Zero ID",
 			userID: 0,
-			want:  false,
+			want:   false,
 		},
 		{
-			name: "Non-existent ID",
+			name:   "Non-existent ID",
 			userID: 2,
-			want:  false,
+			want:   false,
 		},
 	}
 

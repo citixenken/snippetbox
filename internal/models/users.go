@@ -2,9 +2,9 @@ package models
 
 import (
 	"database/sql"
-	"time"
 	"errors"
 	"strings"
+	"time"
 
 	"github.com/go-sql-driver/mysql"
 	"golang.org/x/crypto/bcrypt"
@@ -17,11 +17,11 @@ type UserModelInterface interface {
 }
 
 type User struct {
-	ID        int
-	Name      string
-	Email     string
+	ID             int
+	Name           string
+	Email          string
 	HashedPassword []byte
-	Created	  time.Time
+	Created        time.Time
 }
 
 type UserModel struct {

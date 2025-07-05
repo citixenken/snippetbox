@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"net/http"
 	"github.com/justinas/nosurf"
+	"net/http"
 )
 
 func commonHeaders(next http.Handler) http.Handler {
