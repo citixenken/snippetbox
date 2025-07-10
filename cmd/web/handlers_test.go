@@ -210,8 +210,8 @@ func TestSnippetCreate(t *testing.T) {
 		csrfToken := extractCSRFToken(t, body)
 
 		form := url.Values{}
-		form.Add("email", "test@user.com")
-		form.Add("password", "testuser")
+		form.Add("email", "alice@exampple.com")
+		form.Add("password", "pa$$word")
 		form.Add("csrf_token", csrfToken)
 		ts.postForm(t, "/user/login", form)
 
