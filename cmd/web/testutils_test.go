@@ -13,8 +13,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alexedwards/scs/v2"
 	"github.com/citixenken/snippetbox/internal/models/mocks"
+
+	"github.com/alexedwards/scs/v2"
 	"github.com/go-playground/form/v4"
 )
 
@@ -59,7 +60,6 @@ func newTestServer(t *testing.T, h http.Handler) *testServer {
 	ts := httptest.NewTLSServer(h)
 
 	jar, err := cookiejar.New(nil)
-
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -91,7 +91,6 @@ func (ts *testServer) get(t *testing.T, urlPath string) (int, http.Header, strin
 
 func (ts *testServer) postForm(t *testing.T, urlPath string, form url.Values) (int, http.Header, string) {
 	rs, err := ts.Client().PostForm(ts.URL+urlPath, form)
-
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -101,7 +100,6 @@ func (ts *testServer) postForm(t *testing.T, urlPath string, form url.Values) (i
 	if err != nil {
 		t.Fatal(err)
 	}
-
 	body = bytes.TrimSpace(body)
 
 	return rs.StatusCode, rs.Header, string(body)
